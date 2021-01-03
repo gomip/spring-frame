@@ -16,7 +16,7 @@ class PointCutList {
     fun pointController() {
 
     }
-    @Pointcut("execution(* com.example.springbase...controller..*.*(..))")                                        // com.example.springbase 패키지에 속한 파라미터가 0개 이상인 모든 메서드
+    @Pointcut("execution(* com.example.springbase..controller..*.*(..))")                                        // com.example.springbase 패키지에 속한 파라미터가 0개 이상인 모든 메서드
     fun allController() {
 
     }
@@ -27,7 +27,7 @@ class PointCutList {
     fun pointService() {
 
     }
-    @Pointcut("execution(* com.example.springbase...service..*.*(..))")                                           // com.example.springbase 패키지에 속한 파라미터가 0개 이상인 모든 서비스의 메서드 호출
+    @Pointcut("execution(* com.example.springbase..service..*.*(..))")                                           // com.example.springbase 패키지에 속한 파라미터가 0개 이상인 모든 서비스의 메서드 호출
     fun allService() {
 
     }
