@@ -29,6 +29,9 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
+    //jasypt -----------------------------------------------------------------------------------------------------------
+    implementation("com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.3")
+
     // mybatis ---------------------------------------------------------------------------------------------------------
     implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4")
 

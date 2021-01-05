@@ -3,3 +3,17 @@ server:
   error:
     whitelabel:
       enabled: true
+
+# Jasypt pwd
+app:
+  passwordKey: sorkaksemsvmfpdla
+
+jasypt:
+  encryptor:
+    bean: encryptorBean
+
+spring:
+  datasource:
+    url: jdbc:database-1.c5cl6kmusbvm.ap-northeast-2.rds.amazonaws.com
+    username: gomip
+    password: rkskek12
