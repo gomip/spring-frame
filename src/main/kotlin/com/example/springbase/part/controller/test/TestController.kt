@@ -1,6 +1,7 @@
 package com.example.springbase.part.controller.test
 
 import com.example.springbase.fwk.base.BaseController
+import com.example.springbase.part.dto.test.GetTestOut
 import com.example.springbase.part.service.test.TestService
 import io.swagger.annotations.Api
 import io.swagger.annotations.ApiOperation
@@ -21,7 +22,7 @@ class TestController : BaseController(){
 
     @GetMapping
     @ApiOperation("테스트 api")
-    fun testController() : String {
+    fun testController() : GetTestOut {
         return service.testService()
     }
 }
