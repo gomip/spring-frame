@@ -60,7 +60,7 @@ class ControllerAdvice {
         }
 
         // End ---------------------------------------------------------------------------------------------------------
-        log.info("<<<<<   controller end [$controllerName()] [$elapsed] ms")
+        log.info("<<<<<   controller end [$controllerName()] [$elapsed ms] ")
         return returnVal
     }
 }
