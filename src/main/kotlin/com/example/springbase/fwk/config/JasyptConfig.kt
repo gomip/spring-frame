@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 class JasyptConfig(
-    @Value("\${app.passwordKey") val pwdKey: String
+    @Value("\${app.passwordKey}") val pwdKey: String
 ) {
     companion object{
         val log = LoggerFactory.getLogger(JasyptConfig::class.java) as Logger

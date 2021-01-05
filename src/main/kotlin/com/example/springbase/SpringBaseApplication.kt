@@ -22,25 +22,29 @@ class SpringBaseApplication{
 
         @JvmStatic
         fun main(args: Array<String>) {
-            val elapsed = measureTimeMillis {
-                log.info("=============           AppMain START =============")
-                // main start ------------------------------------------------------------------------------------------
-                val app = runApplication<SpringBaseApplication>(*args) {
-                    setBannerMode(Banner.Mode.OFF)
+            try{
+                val elapsed = measureTimeMillis {
+                    log.info("=============           AppMain START =============")
+                    // main start ------------------------------------------------------------------------------------------
+                    val app = runApplication<SpringBaseApplication>(*args) {
+                        setBannerMode(Banner.Mode.OFF)
+                    }
+
+                    // profile check ---------------------------------------------------------------------------------------
+                    log.info("=============     Check Profile START =============")
+                    val env = app.getBean("environment") as Environment
+                    env.activeProfiles.toList().forEach {log.info(it)}
+                    log.info("=============       Check Profile End ============= : activate profile count: ${env.activeProfiles.count()}")
+
+                    // loaded bean -----------------------------------------------------------------------------------------
+                    log.info("============= Check Loaded Bean START =============")
+                    log.info("Loaded Bean : ${app.beanDefinitionNames.toList().sorted().size}")
+                    log.info("=============   Check Loaded Bean END =============")
                 }
-
-                // profile check ---------------------------------------------------------------------------------------
-                log.info("=============     Check Profile START =============")
-                val env = app.getBean("environment") as Environment
-                env.activeProfiles.toList().forEach {log.info(it)}
-                log.info("=============       Check Profile End ============= : activate profile count: ${env.activeProfiles.count()}")
-
-                // loaded bean -----------------------------------------------------------------------------------------
-                log.info("============= Check Loaded Bean START =============")
-                log.info("Loaded Bean : ${app.beanDefinitionNames.toList().sorted().size}")
-                log.info("=============   Check Loaded Bean END =============")
+                log.info("=============             AppMain End ============= : $elapsed ms")
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
-            log.info("=============             AppMain End ============= : $elapsed ms")
         }
     }
 }

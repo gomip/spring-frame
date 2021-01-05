@@ -14,6 +14,11 @@ jasypt:
 
 spring:
   datasource:
-    url: jdbc:database-1.c5cl6kmusbvm.ap-northeast-2.rds.amazonaws.com
-    username: gomip
-    password: rkskek12
+    url: ENC(Bg9Sj7R3o/3RG/zR1fdqe3y/bc7ElPHAgRVYMBFkyL3D9C8HIsF7AVMw0oxrSfVyf8PhgQYGH4Xvs5MySpN40zfXPTmB8lRUSsUWP38mi8qlx1ueb/P334Pm84lwUrv1)
+    username: ENC(S1eB7u0g7gSn9h6HwJMGeA==)
+    password: ENC(sHVSQ0Qwyvuh9d70r6kCwY9i7SyiCwJq)
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      auto-commit: false
+  profiles:
+    active: local
